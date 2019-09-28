@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Jquery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
 </head>
 
 <!-- The player will have to guess the answer, just like in Word Guess. This time, though, the player will guess with numbers instead of letters. 
@@ -37,6 +48,73 @@
 * Each crystal should have a random hidden value between 1 - 12. -->
 
 <body>
-    
+
+    <h1>Crystal Collector</h1>
+
+    <!-- This will display the random number to the player. -->
+<div id="random-number"></div>
+
+<!-- This will display the players total score, as he presses the crystals. -->
+<div id="player-total-score"></div>
+
+    <!-- Four crystal buttons -->
+
+<div id="grid">
+    <div class="crystal" value="1">
+        <img src="assets/images/green.jpg" alt="a blue crystal" class="purple-crystal"/>
+    </div>
+    <div class="crystal" value="2">
+            <img src="" alt= />
+    </div>
+    <div class="crystal" value="3">
+            <img src="" alt= />
+    </div>
+    <div class="crystal" value="4">
+            <img src="" alt= />
+    </div>
+</div>
+
+
+    <script>
+    // Variables 
+    var randomNum = 0;
+    var playerScore = 0;
+    var wins = 0;
+    var loses = 0;
+    var crystals = [
+        {"crystal1": 0},
+        {"crystal2": 0},
+        {"crystal3": 0},
+        {"crystal4": 0}
+    ];
+
+//Test code
+
+
+//Test code
+
+
+    // Create random number generated to be displayed in random-number div between 19-120.
+    randomNum = Math.floor(Math.random()*10)+1;
+    //$("#random-number").text(randomNum);
+
+    //A function that takes an array of crystals to generate a random number in each of the crystal buttons after game over or player wins. 1-12
+
+    function crystalNumGen (array){
+
+    }
+
+
+    //The player loses if they go over the random number (display number), so we will need to check that the total-player-score does not go over the random number after eachtime the player clicks a crystal.
+
+    // The game will restart when the player wins or loses, so set all variables back to 0 except wins and loses.
+
+    // to generate 4 random numbers to be stored in four seperate variables, a for loop can be done to generate
+
+
+
+
+    </script>
+
 </body>
 </html>
