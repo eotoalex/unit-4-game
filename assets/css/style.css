@@ -1,13 +1,19 @@
 
 /* .crystal {
-    width:1px;
-    height:1px;
+    width:100px;
+    height:100px;
+} */
+
+.img-button {
+    width:80px;
 }
 
-.purple-crystal {
-    height:100px;
-    width:100px;
-} */
+#grid {
+    grid-template-rows: 20%;
+    grid-template-columns: 10% 10% 10% 10%;
+}
+
+
 
 @media (max-width:980px){
 

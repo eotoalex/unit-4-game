@@ -52,67 +52,165 @@
     <h1>Crystal Collector</h1>
 
     <!-- This will display the random number to the player. -->
-<div id="random-number"></div>
+<div id="comp-random-number"></div>
 
 <!-- This will display the players total score, as he presses the crystals. -->
 <div id="player-total-score"></div>
 
+<!-- This will display the players wins. -->
+
+<div id="wins"></div>
+
+<!-- This will display the players loses. -->
+
+<div id="loses"></div>
+
     <!-- Four crystal buttons -->
 
-<div id="grid">
-    <div class="crystal" value="1">
-        <img src="assets/images/green.jpg" alt="a blue crystal" class="purple-crystal"/>
+    <div id="grid">
+
+        <button id="button-1" class="crystal" value="1">
+            <img src="assets/images/green.jpeg" alt="a green crystal" class="img-button"/>
+        </button>
+
+        <button id="button-2" class="crystal" value="2">
+            <img src="assets/images/purple.jpeg" alt="a purple cystal" class="img-button" />
+        </button>
+    
+        <button id="button-3" class="crystal" value="3">
+            <img src="assets/images/clear.jpeg" alt="clear crystal" class="img-button" />
+        </button>
+    
+        <button id="button-4" class="crystal" value="4">
+            <img src="assets/images/teal.jpeg" alt="teal crystal" class="img-button" />
+        </button>
+    
     </div>
-    <div class="crystal" value="2">
-            <img src="" alt= />
-    </div>
-    <div class="crystal" value="3">
-            <img src="" alt= />
-    </div>
-    <div class="crystal" value="4">
-            <img src="" alt= />
-    </div>
-</div>
 
 
     <script>
     // Variables 
+    var counter = 0;
     var randomNum = 0;
     var playerScore = 0;
     var wins = 0;
     var loses = 0;
-    var crystals = [
-        {"crystal1": 0},
-        {"crystal2": 0},
-        {"crystal3": 0},
-        {"crystal4": 0}
-    ];
+    var b1 = parseInt($("#button-1").val());
+    var b2 = parseInt($("#button-2").val());
+    var b3 = parseInt($("#button-3").val());
+    var b4 = parseInt($("#button-4").val());
+    var gameOver = false;
+    arrayOfButtons = [b1,b2,b3,b4];
+
+
+    $("#player-total-score").text("Score: " + playerScore);
+    $("#wins").text("Wins: " + wins);
+    $("#loses").text("Loses: " + loses);
+
+    hiddenButtonNum(arrayOfButtons);
+    console.log(b1,b2,b3,b4);
+    
+            
 
 //Test code
 
 
+
+
+
+
 //Test code
 
 
-    // Create random number generated to be displayed in random-number div between 19-120.
-    randomNum = Math.floor(Math.random()*10)+1;
-    //$("#random-number").text(randomNum);
+    // Random number generated to be displayed in random-number div between 19-120. Added an if statement to make sure that the random number remained above 19.
+    randomNum = Math.floor(Math.random()*120)+1;
+    if (randomNum < 19){
+        var ph = randomNum;
+        randomNum = 19 - randomNum;
+        randomNum = ph + randomNum;
+    }
+    $("#comp-random-number").text(randomNum);
+    
 
     //A function that takes an array of crystals to generate a random number in each of the crystal buttons after game over or player wins. 1-12
 
-    function crystalNumGen (array){
+        function hiddenButtonNum (arr){
+            
+            for (var i = 0; i < 4; i++){
+            buttonNumGen = Math.floor(Math.random()*12)+1;
+            arrayOfButtons[i] = buttonNumGen;
 
+            console.log(arrayOfButtons[i])
+            };
+            b1 = arrayOfButtons[0];
+            b2 = arrayOfButtons[1];
+            b3 = arrayOfButtons[2];
+            b4 = arrayOfButtons[3];
+
+            return b1,b2,b3,b4;
+
+        }
+
+
+
+       
+    
+
+    //     if (parseInt($("#player-total-score")) === randomNum){
+    //     alert("You win!")
+    // }
+    // else if(parseInt($("#player-total-score")) > randomNum){
+    //     alert("Game Over");
+    // }
+
+
+
+        //  This watches for which crystal is pressed and incementally logs the player score.
+
+
+
+    $(".crystal").on("click",function(event) {
+   var pressedButton = event.key;
+
+  if(playerScore === randomNum){
+      alert("You won.")
+
+  }else if(playerScore > randomNum){
+      alert("You lose.")
+  }
+   else if(parseInt($(this).val()) === 1){
+    playerScore = playerScore + b1;
+    $("#player-total-score").text(playerScore);
     }
+    else if (parseInt($(this).val()) === 2) {
+        playerScore = playerScore + b2;
+        $("#player-total-score").text(playerScore);
+        console.log("success" + playerScore );
+    }
+    else if (parseInt($(this).val()) === 3) {
+        playerScore = playerScore + b3;
+        $("#player-total-score").text(playerScore);
+        console.log("success" + playerScore );
+    }
+    else if (parseInt($(this).val()) === 4) {
+        playerScore = playerScore + b4;
+        $("#player-total-score").text(playerScore);
+        console.log("Success" + playerScore );
+    }
+    
+    
+   });
 
+
+   
+      
 
     //The player loses if they go over the random number (display number), so we will need to check that the total-player-score does not go over the random number after eachtime the player clicks a crystal.
 
     // The game will restart when the player wins or loses, so set all variables back to 0 except wins and loses.
 
-    // to generate 4 random numbers to be stored in four seperate variables, a for loop can be done to generate
-
-
-
+    
+   
 
     </script>
 
