@@ -1,8 +1,7 @@
 
-/* .crystal {
-    width:100px;
-    height:100px;
-} */
+body {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6h_ULXeRICItV2RfL0qDg2SNwtW0CAmO4CHS0m2KzpFiHKIDC)
+}
 
 .img-button {
     width:80px;
@@ -11,7 +10,26 @@
 #grid {
     grid-template-rows: 20%;
     grid-template-columns: 10% 10% 10% 10%;
+    margin:auto;
+    display:block;
 }
+
+#comp-random-number{
+    text-align:center;
+}
+
+.card-title {
+    text-align:center;
+}
+
+#player-total-score {
+    text-align:center;
+    
+}
+
+/* .card {
+    float:left;
+} */
 
 
 

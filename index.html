@@ -10,17 +10,36 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- Link to Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <!-- Jquery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-
-
 
 </head>
 
 <body>
 
-    <h1>Crystal Collector</h1>
+    
+    <div class="card" style="width: 18rem;">
+        
+        <div class="card-body">
+          <h5 class="card-title">Computer's Number</h5>
+          <p id="comp-random-number"></p>
+          
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        
+        <div class="card-body">
+          <h5 class="card-title">Player Score</h5>
+          <p id="player-total-score"></p>
+          
+        </div>
+      </div>
+
 
     <!-- This will display the random number to the player. -->
 <div id="comp-random-number"></div>
@@ -36,9 +55,12 @@
 
 <div id="loses"></div>
 
-    <!-- Four crystal buttons -->
 
-    <div id="grid">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Crystal Collector</h1>
+      <p class="lead">Match the computers number with your player score by clicking on any of the four crystals, but be careful not to go over or you will lose. Also, the crystals will not always have the same number after each round ends.</p>
+       <div id="grid">
 
         <button id="button-1" class="crystal" value="1">
             <img src="assets/images/green.jpeg" alt="a green crystal" class="img-button"/>
@@ -57,6 +79,12 @@
         </button>
     
     </div>
+    </div>
+  </div>
+
+    <!-- Four crystal buttons -->
+
+   
 
     <!-- Linking Javascript -->
     <script src="assets/javascript/game.js"></script>

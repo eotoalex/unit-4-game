@@ -30,7 +30,7 @@
         randomNum = 19 - randomNum;
         randomNum = ph + randomNum;
     }
-    $("#comp-random-number").text(randomNum);
+    $("#comp-random-number").text( randomNum);
     
     
 
@@ -61,42 +61,12 @@
     $(".crystal").on("click",function(event) {
     var pressedButton = event.key;
 
-    if(playerScore === randomNum){
-    wins++;
-    playerScore = 0;
-    hiddenButtonNum(arrayOfButtons);
-    $("#wins").text("Wins: "+wins);
     
-    // New computer generated number to be displayed.
-    randomNum = Math.floor(Math.random()*120)+1;
-
-    if (randomNum < 19){
-        var ph = randomNum;
-        randomNum = 19 - randomNum;
-        randomNum = ph + randomNum;
-    }
-     $("#comp-random-number").text(randomNum);
-     }
-     else if(playerScore > randomNum){
-     loses++;
-     playerScore = 0;
-     hiddenButtonNum(arrayOfButtons);
-     $("#loses").text("Loses: "+loses);
-
-    // New computer generated number to be displayed.
-    randomNum = Math.floor(Math.random()*120)+1;
-    if (randomNum < 19){
-        var ph = randomNum;
-        randomNum = 19 - randomNum;
-        randomNum = ph + randomNum;
-    }
-    $("#comp-random-number").text(randomNum);
-       
-   }
-   else if(parseInt($(this).val()) === 1){
+   if(parseInt($(this).val()) === 1){
     playerScore = playerScore + b1;
     $("#player-total-score").text(playerScore);
     console.log("Button1 " + playerScore );
+    counter+=playerScore;
     }
     else if (parseInt($(this).val()) === 2) {
         playerScore = playerScore + b2;
@@ -113,6 +83,54 @@
         $("#player-total-score").text(playerScore);
         console.log("Button4 " + playerScore );
     }  
+
+
+    if(playerScore === randomNum){
+        playerScore = 0;
+        wins++;
+        
+        hiddenButtonNum(arrayOfButtons);
+        $("#wins").text("Wins: "+wins);
+        $("#player-total-score").text(playerScore);
+        
+        
+        // New computer generated number to be displayed.
+        randomNum = Math.floor(Math.random()*120)+1;
+    
+        if (randomNum < 19){
+            var ph = randomNum;
+            randomNum = 19 - randomNum;
+            randomNum = ph + randomNum;
+        }
+         $("#comp-random-number").text(randomNum);
+         alert("You win!")
+         
+         
+         }
+         else if(playerScore > randomNum){
+         playerScore = 0;
+         loses++;
+         hiddenButtonNum(arrayOfButtons);
+         $("#loses").text("Loses: "+loses);
+         $("#player-total-score").text(playerScore);
+         
+    
+        // New computer generated number to be displayed.
+        randomNum = Math.floor(Math.random()*120)+1;
+        if (randomNum < 19){
+            var ph = randomNum;
+            randomNum = 19 - randomNum;
+            randomNum = ph + randomNum;
+        }
+        $("#comp-random-number").text(randomNum);
+        alert("Game Over. You went over.");
+        
+           
+       }
+    
+
    });
 
+   
+console.log(counter);
     
