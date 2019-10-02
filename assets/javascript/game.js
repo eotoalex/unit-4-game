@@ -94,7 +94,7 @@
         $("#player-total-score").text(playerScore);
         
         
-        // New computer generated number to be displayed.
+        // After player wins, a new computer generated number to be displayed.
         randomNum = Math.floor(Math.random()*120)+1;
     
         if (randomNum < 19){
@@ -115,7 +115,7 @@
          $("#player-total-score").text(playerScore);
          
     
-        // New computer generated number to be displayed.
+        // After player loses, a new computer generated number to be displayed.
         randomNum = Math.floor(Math.random()*120)+1;
         if (randomNum < 19){
             var ph = randomNum;

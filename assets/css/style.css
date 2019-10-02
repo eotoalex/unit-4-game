@@ -20,6 +20,13 @@ body {
 
 .card-title {
     text-align:center;
+    font-family: 'Cinzel', serif;
+       
+}
+
+#comp-num {
+    font-size:17px;
+    margin-bottom:16px;
 }
 
 #player-total-score {
@@ -27,20 +34,130 @@ body {
     
 }
 
-/* .card {
+#wins{
+    text-align:center;
+}
+
+#loses{
+    text-align:center;
+}
+
+.card {
     float:left;
-} */
+    clear:right;
+    position:relative;
 
-
-
-@media (max-width:980px){
-
+    left:65px;
+    width:23%;
 }
 
-@media (max-width:768px){
-
+.display-4 {
+    font-family: 'Cinzel', serif;
+    text-align:center;
 }
+
+
+.jumbotron-fluid {
+    position:relative;
+    top:192px;
+}
+p {
+    font-family: 'News Cycle', sans-serif; 
+}
+
+
+@media  (min-width:641px)and (max-width:985px) {
+    .card {
+        float:left;
+        clear:right;
+        position:relative;
+        left:100px;
+        width:20%;
+        height:100px;
+        
+    }
+
+    
+    .display-4 {
+        text-align:center;
+        font-family: 'Cinzel', serif;
+    }
+
+    #comp-num {
+        font-size:15.1px;
+    }
+    #player-num{
+        font-size:17px;
+    }
+    p {
+        font-family: 'News Cycle', sans-serif; 
+    }
+}
+
+
 
 @media (max-width:640px){
+    body {
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6h_ULXeRICItV2RfL0qDg2SNwtW0CAmO4CHS0m2KzpFiHKIDC)
+    }
+    
+    .img-button {
+        width:80px;
+    }
+    
+    #grid {
+        grid-template-rows: 20%;
+        grid-template-columns: 10% 10% 10% 10%;
+        margin:auto;
+        display:block;
+    }
+    
+    #comp-random-number{
+        text-align:center;
+    }
+    
+    .card-title {
+        text-align:center;
+    }
+    
+    #player-total-score {
+        text-align:center;
+        
+    }
+    
+    #wins{
+        text-align:center;
+    }
+    
+    #loses{
+        text-align:center;
+    }
+    
+    .card {
+        float:left;
+        clear:right;
+        position:relative;
+        left:0px;
+        margin:auto;
+        display:block;
+        width:50%;
+        height:100px;
+        
+    }
 
+    .display-4 {
+        text-align:center;
+        font-family: 'Cinzel', serif;
+        
+    }
+    
+
+    .container {
+        height:80%;
+    }
+    p {
+        font-family: 'News Cycle', sans-serif; 
+    }
+    
 }
+
